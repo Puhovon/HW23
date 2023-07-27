@@ -1,4 +1,3 @@
-using System;
 using DefaultNamespace;
 using UnityEngine;
 
@@ -12,14 +11,14 @@ public class Animations : MonoBehaviour
       _animator = GetComponent<Animator>();
       movement = GetComponent<Movement>();
    }
-
+   
    private void Update()
    {
       _animator.SetFloat("VelocityNoZ", movement.Velocity.magnitude);   
    }
    
-   public void Attack()
+   public void Attack(string nameOfAttack)
    {
-      _animator.SetTrigger("Attack");
+      _animator.SetTrigger(nameOfAttack);
    }
 }
